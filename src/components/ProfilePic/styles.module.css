@@ -1,0 +1,44 @@
+/* TYPE VARIANTS */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.containerHighlighted {
+  composes: container;
+  border: 1px solid var(--c-primary);
+  padding: 4px;
+  background-color: var(--c-surface);
+}
+
+/* SIZE VARIANTS */
+
+.small {
+  width: 36px;
+  height: 36px;
+}
+
+.medium {
+  width: 48px;
+  height: 48px;
+}
+
+.large {
+  width: 56px;
+  height: 56px;
+}
+
+/* CHILDREN STYLES */
+
+.containerHighlighted > .profilePicImg {
+  border-radius: 4px;
+}
+
+.profilePicImg {
+  width: 100%;
+  border-radius: 0;
+  aspect-ratio: 1;
+}

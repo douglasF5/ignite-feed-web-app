@@ -1,0 +1,44 @@
+.container {
+  composes: VStack from "../../base-styles.module.css";
+  gap: 16px;
+  padding-top: 32px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--c-surface-variant);
+}
+
+.header {
+  composes: HStack from "../../base-styles.module.css";
+  padding: 0 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.infoWrapper {
+  composes: HStack from "../../base-styles.module.css";
+  gap: 8px;
+  align-items: center;
+}
+
+.profileName {
+  composes: labelL from "../../base-styles.module.css";
+}
+
+.profileRole {
+  composes: bodyS from "../../base-styles.module.css";
+  color: var(--c-on-surface-medium);
+}
+
+.contentWrapper {
+  composes: bodyM from "../../base-styles.module.css";
+  padding: 0 32px;
+}
+
+.actionBar {
+  composes: HStack from "../../base-styles.module.css";
+  justify-content: space-around;
+  padding: 12px 0;
+  margin: 0 32px;
+  border-top: 1px solid var(--c-outline);
+  border-bottom: none;
+}

@@ -1,0 +1,168 @@
+/* BASE STYLES */
+:root {
+  /*Elevation*/
+  --c-elevation-1: 0.05;
+  --c-elevation-2: 0.08;
+  /* Color styles */
+  --c-outline: rgba(63, 63, 77, 1);
+  --c-scrim: rgba(0, 0, 0, 0.7);
+  --c-primary: rgba(11, 208, 150, 1);
+  --c-rgb-primary: 11, 208, 150;
+  --c-primary-hover: rgba(13, 194, 141, 1);
+  --c-on-primary: rgba(32, 32, 36, 1);
+  --c-rgb-on-primary: 32, 32, 36;
+  --c-primary-container: rgba(0, 135, 95, 1);
+  --c-on-primary-container: rgba(255, 255, 255, 1);
+  --c-surface: rgba(18, 18, 20, 1);
+  --c-surface-variant: rgba(32, 32, 36, 1);
+  --c-surface-variant-2: rgba(32, 32, 36, 1);
+  --c-on-surface: rgba(236, 236, 239, 1);
+  --c-rgb-on-surface: 236, 236, 239;
+  --c-on-surface-medium: rgba(236, 236, 239, 0.75);
+  --c-on-surface-low: rgba(236, 236, 239, 0.55);
+  --c-negative: rgba(246, 116, 127, 1);
+  --c-rgb-negative: 246, 116, 127;
+  --c-on-negative: rgba(32, 32, 36, 1);
+  --c-negative-container: rgba(255, 85, 99, 1);
+  --c-on-negative-container: rgba(32, 32, 36, 1);
+  /* Layout */
+  --l-max-width: 1024px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--c-primary);
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  border-bottom: 1px solid var(--c-outline);
+  transition: border-bottom-color 100ms ease-in;
+}
+
+a[target]::after {
+  --icon-size: 20px;
+  content: "";
+  display: inline-block;
+  margin-left: 2px;
+  height: var(--icon-size);
+  width: var(--icon-size);
+  background-image: url("/arrow-external-link.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  transform: translate(0, 4px);
+  transition: transform 100ms ease-in;
+}
+
+a:hover::before {
+  border-bottom-color: var(--c-primary);
+}
+
+a:hover::after {
+  transform: translate(2px, 2px);
+}
+
+/* GLOBAL RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  background-color: var(--c-surface);
+  color: var(--c-on-surface);
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

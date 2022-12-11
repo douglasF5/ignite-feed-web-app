@@ -1,0 +1,84 @@
+/* LAYOUT */
+.sectionContainer {
+  padding: 0 48px;
+}
+
+.contentContainer {
+  margin: 0 auto;
+  max-width: var(--l-max-width, 1024px);
+}
+
+.HStack {
+  display: flex;
+  flex-direction: row;
+}
+
+.VStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* TYPOGRAPHY */
+.headlineM,
+.titleM,
+.titleS,
+.labelL,
+.labelM {
+  font-weight: 500;
+  line-height: 160%;
+}
+
+.headlineM {
+  font-size: 1.5rem;
+}
+
+.titleM {
+  font-size: 1rem;
+}
+
+.titleS {
+  font-size: 0.88rem;
+}
+
+.labelL {
+  font-size: 1rem;
+}
+
+.labelM {
+  font-size: 0.88rem;
+}
+
+.bodyL,
+.bodyM,
+.bodyS {
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.bodyL {
+  font-size: 1.12rem;
+}
+
+.bodyM {
+  font-size: 1rem;
+}
+
+.bodyS {
+  font-size: 0.88rem;
+}
+
+.bodyMN {
+  font-size: 0.75rem;
+}

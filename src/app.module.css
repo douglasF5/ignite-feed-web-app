@@ -1,0 +1,54 @@
+.pageTitle {
+  composes: srOnly from "./base-styles.module.css";
+}
+
+.mainContainer {
+  composes: sectionContainer from "./base-styles.module.css";
+}
+
+.mainContentContainer {
+  composes: contentContainer from "./base-styles.module.css";
+  composes: HStack from "./base-styles.module.css";
+  gap: 32px;
+  padding: 16px 0 80px 0;
+  justify-content: stretch !important;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 24px;
+}
+
+.profileSection {
+  position: relative;
+  max-width: 256px;
+  flex-shrink: 0;
+}
+
+.disclosureText {
+  composes: bodyMN from "./base-styles.module.css";
+  color: var(--c-on-surface-low);
+  text-align: center;
+}
+
+.disclosureText:nth-child(2) {
+  margin-top: 1rem;
+}
+
+.postsSection {
+  composes: VStack from "./base-styles.module.css";
+  gap: 24px;
+  width: 100%;
+  align-items: center;
+}
+
+.postsList {
+  composes: VStack from "./base-styles.module.css";
+  gap: 8px;
+  width: 100%;
+}
+
+.footer {
+  composes: bodyM from "./base-styles.module.css";
+  color: var(--c-on-surface-low);
+}

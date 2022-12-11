@@ -1,0 +1,16 @@
+.headerContainer {
+  composes: sectionContainer from "../../base-styles.module.css";
+  background-color: var(--c-surface-variant);
+}
+
+.headerContentContainer {
+  composes: contentContainer from "../../base-styles.module.css" HStack from "../../base-styles.module.css";
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  height: 60px;
+}
+
+.logo {
+  height: 32px;
+}
