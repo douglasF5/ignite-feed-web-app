@@ -48,7 +48,7 @@
   width: 100%;
 }
 
-.footer {
+.footerText {
   composes: bodyS from "./base-styles.module.css";
   color: var(--c-on-surface-low);
 }

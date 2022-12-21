@@ -3,6 +3,7 @@ import { ProfilePic } from '../ProfilePic';
 import { Button } from '../Button';
 import { HandsClap } from '../Icons';
 import { TextBubble } from '../Icons';
+import { CommentWidget } from '../CommentWidget';
 
 export function Post({ data }) {
   const { authorPicture,
@@ -52,28 +53,7 @@ export function Post({ data }) {
       </div>
       <div className={s.commentsSection}>
         <h2 className={s.commentsSectionTitle}>All comments</h2>
-        <div className={s.commentWidget}>
-          <ProfilePic
-            resourcePath="/leslie-profile-pic.png"
-            variantOptions={{
-              size: 'S',
-              type: 'default'
-            }}
-          />
-          <form className={s.commentForm}>
-            <textarea rows={1} className={s.commentTextArea} placeholder="Add a comment..." />
-            <Button
-              disabled
-              variantOptions={{
-                type: 'filledPrimary',
-                label: 'M',
-                padding: 'S'
-              }}
-            >
-              Post
-            </Button>
-          </form>
-        </div>
+        <CommentWidget />
       </div>
     </div>
   );

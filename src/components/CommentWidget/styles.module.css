@@ -1,0 +1,43 @@
+.commentWidget {
+  composes: HStack from "../../base-styles.module.css";
+  gap: 8px;
+}
+
+.commentForm {
+  composes: HStack from "../../base-styles.module.css";
+  padding: 12px;
+  align-items: center;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--c-outline);
+  background-color: var(--c-surface);
+  transition: border 100ms ease-in;
+}
+
+.commentForm:focus-within {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  outline: 1px solid var(--c-primary);
+}
+
+.commentTextArea {
+  composes: bodyM from "../../base-styles.module.css";
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: var(--c-on-surface);
+  resize: none;
+}
+
+.commentTextArea:focus-visible {
+  outline: none;
+}
+
+:local(.commentTextArea)::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 160%;
+  color: var(--c-on-surface-low);
+}

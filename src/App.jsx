@@ -39,7 +39,7 @@ function App() {
                 <Post key={idx} data={post} />
               ))}
             </div>
-            <footer className={s.footer}>🎉 You&apos;ve got to the end!</footer>
+            <footer>🎉 <span className={s.footerText}>You&apos;re up to date!</span></footer>
           </section>
         </div>
       </main>
