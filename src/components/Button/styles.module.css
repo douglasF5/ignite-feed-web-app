@@ -10,13 +10,14 @@
   transition: background-color 100ms ease-in, color 100ms ease-in;
 }
 
-button:active {
+button:active:not([disabled]) {
   transform: scale(0.98);
 }
 
 .button[disabled] {
   background-color: rgba(var(--c-rgb-on-surface), 0.12);
   color: rgba(var(--c-rgb-on-surface), 0.38);
+  cursor: not-allowed;
 }
 
 /* TYPE VARIANTS */
@@ -26,7 +27,7 @@ button:active {
   color: var(--c-on-primary);
 }
 
-.filledPrimary:hover {
+.filledPrimary:hover:not([disabled]) {
   background-color: var(--c-primary-hover);
 }
 

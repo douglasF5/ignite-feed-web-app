@@ -10,17 +10,13 @@ function App() {
       authorPicture: './jana-profile-pic.png',
       authorName: 'Jane Cooper',
       authorRole: 'Frontend Developer',
-      content: '<p>Hey folks 👋</p><br/><p>Just updated my portfolio. This is a project I worked on during NLW Return, an event by Rocketseat. Check out DoctorCare down below.</p><br/><p>👉 <a href="#">jane.design/doctorcare</a></p><br/><p><span>#newProject #nlw #rocketseat</span></p>'
+      content: '<p>Hey folks 👋</p><br/><p>Just updated my portfolio. This is a project I worked on during NLW Return, an event by Rocketseat. Check out DoctorCare down below.</p><br/><p>👉&nbsp;&nbsp;<a href="#">jane.design/doctorcare</a></p><br/><p><a href="#">#newProject</a>&nbsp;<a href="#">#nlw</a>&nbsp;<a href="#">#rocketseat</a></p>'
     },
     {
       authorPicture: './bessie-profile-pic.png',
       authorName: 'Bessie Cooper',
       authorRole: 'Full Stack Developer',
-      content: [
-        'Finally, the first version of my portfolio is out! 🙌 It was challenging to design and code the whole thing, but it turns out great. Check it out here -> ',
-        'bessie.dev',
-        '#portfolio #frontend #fullStack #design'
-      ]
+      content: '<p>Finally, the first version of my portfolio is out! 🙌 It was challenging to design and code the whole thing, but it turns out great.</p><br/><p>Check it out here -> <a href="#">bessie.dev</a></p><br/><p><a href="#">#portfolio</a> <a href="#">#frontend</a> <a href="#">#fullStack</a> <a href="#">#design</a></p>'
     }
   ];
 

@@ -1,7 +1,7 @@
 import { composeVariant } from '../../utils/utils';
 import s from './styles.module.css';
 
-export function Button({ children, variantOptions }) {
+export function Button({ children, variantOptions, ...rest }) {
   const variantClasses = {
     type: {
       filledPrimary: s.filledPrimary,
@@ -22,6 +22,6 @@ export function Button({ children, variantOptions }) {
   };
 
   return (
-    <button className={composeVariant(variantClasses, variantOptions)}>{children}</button>
+    <button className={composeVariant(variantClasses, variantOptions)} {...rest}>{children}</button>
   );
 }

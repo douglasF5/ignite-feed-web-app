@@ -10,7 +10,7 @@
   composes: contentContainer from "./base-styles.module.css";
   composes: HStack from "./base-styles.module.css";
   gap: 32px;
-  padding: 16px 0 80px 0;
+  padding: 16px 0 48px 0;
   justify-content: stretch !important;
 }
 
@@ -37,7 +37,7 @@
 
 .postsSection {
   composes: VStack from "./base-styles.module.css";
-  gap: 24px;
+  gap: 48px;
   width: 100%;
   align-items: center;
 }
@@ -49,6 +49,6 @@
 }
 
 .footer {
-  composes: bodyM from "./base-styles.module.css";
+  composes: bodyS from "./base-styles.module.css";
   color: var(--c-on-surface-low);
 }

@@ -26,7 +26,7 @@
   --c-negative-container: rgba(255, 85, 99, 1);
   --c-on-negative-container: rgba(32, 32, 36, 1);
   /* Layout */
-  --l-max-width: 1024px;
+  --l-max-width: 1000px;
 }
 
 h1,

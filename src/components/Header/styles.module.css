@@ -1,6 +1,7 @@
 .headerContainer {
   composes: sectionContainer from "../../base-styles.module.css";
   background-color: var(--c-surface-variant);
+  border-bottom: 1px solid var(--c-outline);
 }
 
 .headerContentContainer {
