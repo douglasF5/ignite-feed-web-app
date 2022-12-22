@@ -19,6 +19,6 @@ function writeFileErrorHandler(err) {
 
 // Creating the actual files
 // Component
-fs.writeFile(`${dir}/${name}.jsx`, component(name), writeFileErrorHandler);
+fs.writeFile(`${dir}/index.jsx`, component(name), writeFileErrorHandler);
 // Styles
 fs.writeFile(`${dir}/styles.module.css`, '', writeFileErrorHandler);

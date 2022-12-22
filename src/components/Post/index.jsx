@@ -1,9 +1,9 @@
 import s from './styles.module.css';
 import { ProfilePic } from '../ProfilePic';
 import { Button } from '../Button';
-import { HandsClap } from '../Icons';
-import { TextBubble } from '../Icons';
+import { HandsClap, TextBubble } from '../Icons';
 import { CommentWidget } from '../CommentWidget';
+import { Comment } from '../Comment';
 
 export function Post({ data }) {
   const { authorPicture,
@@ -54,6 +54,7 @@ export function Post({ data }) {
       <div className={s.commentsSection}>
         <h2 className={s.commentsSectionTitle}>All comments</h2>
         <CommentWidget />
+        <Comment />
       </div>
     </div>
   );

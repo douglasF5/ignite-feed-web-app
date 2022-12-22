@@ -1,0 +1,47 @@
+.container {
+  composes: HStack from "../../base-styles.module.css";
+  gap: 8px;
+}
+
+.contentSlot {
+  composes: VStack from "../../base-styles.module.css";
+  width: 100%;
+  gap: 6px;
+}
+
+.contentCard {
+  padding: 14px 16px;
+  border-radius: 8px;
+  background-color: rgba(var(--c-rgb-on-surface), var(--c-elevation-2));
+}
+
+.contentHeader {
+  composes: HStack from "../../base-styles.module.css";
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.authorName {
+  composes: labelL from "../../base-styles.module.css";
+}
+
+.authorRole {
+  composes: bodyS from "../../base-styles.module.css";
+  color: var(--c-on-surface-medium);
+}
+
+.publishTime {
+  composes: bodyS from "../../base-styles.module.css";
+  color: var(--c-on-surface-low);
+}
+
+.contentContainer {
+  composes: bodyM from "../../base-styles.module.css";
+  padding: 8px 0;
+}
+
+.actionBar {
+  composes: HStack from "../../base-styles.module.css";
+  justify-content: space-between;
+}
