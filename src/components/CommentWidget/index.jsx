@@ -6,11 +6,10 @@ import { useState } from 'react';
 
 export function CommentWidget() {
   const [commentContent, setCommentContent] = useState('');
-  const [isSubmitButtonEnabled, setIsSubmitButtonEnabled] = useState(true);
+  const isSubmitButtonDisabled = commentContent === '';
 
   function handleUpdateTextArea(e) {
-    setCommentContent(e.value);
-    setIsSubmitButtonEnabled(!(commentContent === ''));
+    setCommentContent(e.target.value);
   }
 
   return (
@@ -31,7 +30,7 @@ export function CommentWidget() {
           onInput={handleUpdateTextArea}
         />
         <Button
-          disabled={!isSubmitButtonEnabled}
+          disabled={isSubmitButtonDisabled}
           variantOptions={{
             type: 'filledPrimary',
             label: 'M',

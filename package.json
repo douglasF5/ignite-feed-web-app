@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gc": "node ./src/utils/component-gen/index.js $1"
   },
   "dependencies": {
     "@mui/base": "^5.0.0-alpha.111",
