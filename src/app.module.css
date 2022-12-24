@@ -3,15 +3,42 @@
 }
 
 .mainContainer {
-  composes: sectionContainer from "./base-styles.module.css";
+  padding: 0 48px;
+}
+
+@media screen and (max-width: 550px) {
+  .mainContainer {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .mainContainer {
+    padding: 0;
+  }
 }
 
 .mainContentContainer {
   composes: contentContainer from "./base-styles.module.css";
   composes: HStack from "./base-styles.module.css";
-  gap: 32px;
-  padding: 16px 0 48px 0;
-  justify-content: stretch !important;
+  gap: 20px;
+  padding: 20px 0 48px 0;
+  justify-content: stretch;
+}
+
+@media screen and (max-width: 834px) {
+  .mainContainer > .mainContentContainer {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0 32px 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .mainContainer > .mainContentContainer {
+    gap: 8px;
+    padding: 8px 0 32px 0;
+  }
 }
 
 .stickyContainer {
@@ -35,11 +62,31 @@
   margin-top: 1rem;
 }
 
+@media screen and (max-width: 834px) {
+  .profileSection {
+    width: 100%;
+    max-width: none;
+    flex-shrink: 1;
+  }
+}
+
 .postsSection {
   composes: VStack from "./base-styles.module.css";
   gap: 48px;
   width: 100%;
   align-items: center;
+}
+
+@media screen and (max-width: 834px) {
+  .postsSection {
+    gap: 32px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .postsSection {
+    gap: 24px;
+  }
 }
 
 .postsList {
@@ -48,7 +95,31 @@
   width: 100%;
 }
 
+.postContainer {
+  composes: VStack from "./base-styles.module.css";
+  gap: 16px;
+  padding-top: 32px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--c-surface-variant);
+}
+
+@media screen and (max-width: 450px) {
+  .postContainer {
+    gap: 12px;
+    padding-top: 12px;
+    overflow: hidden;
+    border-radius: 0;
+  }
+}
+
 .footerText {
   composes: bodyS from "./base-styles.module.css";
   color: var(--c-on-surface-low);
+}
+
+@media screen and (max-width: 834px) {
+  .disclosureText {
+    display: none;
+  }
 }

@@ -6,7 +6,7 @@ import { SquareAndPencil } from "../Icons";
 export function ProfileCard() {
   return (
     <div className={s.container}>
-      <img src="/profile-cover.png" alt="Profile cover" />
+      <img className={s.profileCover} src="/profile-cover.png" alt="Profile cover" />
       <div className={s.contentContainer}>
         <div className={s.infoContainer}>
           <ProfilePic

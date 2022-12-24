@@ -1,7 +1,19 @@
 .headerContainer {
-  composes: sectionContainer from "../../base-styles.module.css";
+  padding: 0 48px;
   background-color: var(--c-surface-variant);
   border-bottom: 1px solid var(--c-outline);
+}
+
+@media screen and (max-width: 550px) {
+  .headerContainer {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .headerContainer {
+    padding: 0 12px;
+  }
 }
 
 .headerContentContainer {

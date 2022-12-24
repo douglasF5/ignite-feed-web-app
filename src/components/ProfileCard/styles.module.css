@@ -32,3 +32,50 @@
   color: var(--c-on-surface-medium);
   text-align: center;
 }
+
+@media screen and (max-width: 834px) {
+  .container {
+    background-color: rgba(var(--c-rgb-primary), var(--c-elevation-2));
+  }
+
+  .container > .contentContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0;
+    padding: 24px;
+  }
+
+  .profileCover {
+    display: none;
+  }
+
+  .contentContainer > .infoContainer {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .profileName, .profileRole {
+    text-align: left;
+  }
+
+  .profileRole {
+    color: var(--c-primary);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    border-radius: 0;
+  }
+
+  .container > .contentContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 12px;
+  }
+}

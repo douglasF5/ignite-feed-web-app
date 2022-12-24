@@ -1,0 +1,16 @@
+.actionBar {
+  composes: HStack from "../../base-styles.module.css";
+  justify-content: space-around;
+  padding: 12px 0;
+  margin: 0 32px;
+  border-top: 1px solid var(--c-outline);
+  border-bottom: 1px solid var(--c-outline);
+}
+
+@media screen and (max-width: 450px) {
+  .actionBar {
+    padding: 8px 0;
+    justify-content: space-between;
+    margin: 0 12px;
+  }
+}

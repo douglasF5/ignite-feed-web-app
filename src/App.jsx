@@ -2,7 +2,9 @@ import './global-styles.css';
 import s from './app.module.css';
 import { Header } from './components/Header';
 import { ProfileCard } from './components/ProfileCard';
-import { Post } from './components/Post';
+import { PostContent } from './components/PostContent';
+import { PostActionsBar } from './components/PostActionsBar';
+import { CommentsSection } from './components/CommentsSection';
 
 function App() {
   const postsMockContent = [
@@ -36,7 +38,11 @@ function App() {
           <section className={s.postsSection}>
             <div className={s.postsList}>
               {postsMockContent.map((post, idx) => (
-                <Post key={idx} data={post} />
+                <div key={idx} className={s.postContainer}>
+                  <PostContent data={post} />
+                  <PostActionsBar />
+                  <CommentsSection />
+                </div>
               ))}
             </div>
             <footer>🎉 <span className={s.footerText}>You&apos;re up to date!</span></footer>

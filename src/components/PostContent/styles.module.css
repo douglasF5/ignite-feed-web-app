@@ -1,17 +1,14 @@
-.container {
-  composes: VStack from "../../base-styles.module.css";
-  gap: 16px;
-  padding-top: 32px;
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: var(--c-surface-variant);
-}
-
 .header {
   composes: HStack from "../../base-styles.module.css";
   padding: 0 32px;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    padding: 0 12px;
+  }
 }
 
 .infoWrapper {
@@ -39,22 +36,9 @@
   padding: 8px 32px;
 }
 
-.actionBar {
-  composes: HStack from "../../base-styles.module.css";
-  justify-content: space-around;
-  padding: 12px 0;
-  margin: 0 32px;
-  border-top: 1px solid var(--c-outline);
-  border-bottom: 1px solid var(--c-outline);
+@media screen and (max-width: 450px) {
+  .contentWrapper {
+    padding: 0 12px;
+  }
 }
 
-.commentsSection {
-  composes: VStack from "../../base-styles.module.css";
-  gap: 16px;
-  padding: 0 32px 32px 32px;
-}
-
-.commentsSectionTitle {
-  composes: titleM from "../../base-styles.module.css";
-  margin-bottom: 8px;
-}
