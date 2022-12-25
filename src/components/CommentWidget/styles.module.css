@@ -11,6 +11,7 @@
   border: 1px solid var(--c-outline);
   background-color: var(--c-surface);
   transition: border 100ms ease-in;
+  transition: outline 100ms ease-in;
 }
 
 .commentForm:focus-within {

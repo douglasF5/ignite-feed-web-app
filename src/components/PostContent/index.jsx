@@ -2,9 +2,8 @@ import s from './styles.module.css';
 import { ProfilePic } from '../ProfilePic';
 
 export function PostContent({ data }) {
-  const { authorPicture,
-    authorName,
-    authorRole,
+  const { authorInfo,
+    publishedAt,
     content } = data;
 
   return (
@@ -12,19 +11,19 @@ export function PostContent({ data }) {
       <div className={s.header}>
         <div className={s.infoWrapper}>
           <ProfilePic
-            resourcePath={authorPicture}
-            altText={authorName}
+            resourcePath={authorInfo.picture}
+            altText={authorInfo.name}
             variantOptions={{
               type: 'highlighted',
               size: 'M'
             }}
           />
           <div>
-            <p className={s.profileName}>{authorName}</p>
-            <p className={s.profileRole}>{authorRole}</p>
+            <p className={s.profileName}>{authorInfo.name}</p>
+            <p className={s.profileRole}>{authorInfo.role}</p>
           </div>
         </div>
-        <p className={s.publishTime}>2h ago</p>
+        <p className={s.publishTime}>{publishedAt}</p>
       </div>
       <div className={s.contentWrapper}>
         <p dangerouslySetInnerHTML={{ __html: content }}></p>
