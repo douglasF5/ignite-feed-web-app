@@ -10,3 +10,7 @@ export function composeVariant(variantClasses, options) {
 
   return classList.join(" ");
 };
+
+export function composeClasses(classList) {
+  return classList.filter(className => className !== null).join(" ");
+};

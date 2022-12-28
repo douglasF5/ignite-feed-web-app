@@ -23,7 +23,13 @@ export function PostContent({ data }) {
             <p className={s.profileRole}>{authorInfo.role}</p>
           </div>
         </div>
-        <p className={s.publishTime}>{publishedAt}</p>
+        <time
+          className={s.publishTime}
+          dateTime="2008-02-14 20:00"
+          title="2008-02-14 20:00"
+        >
+          {publishedAt}
+        </time>
       </div>
       <div className={s.contentWrapper}>
         <p dangerouslySetInnerHTML={{ __html: content }}></p>

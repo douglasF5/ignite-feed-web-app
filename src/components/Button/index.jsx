@@ -1,7 +1,7 @@
 import { composeVariant } from '../../utils/utils';
 import s from './styles.module.css';
 
-export function Button({ children, variantOptions, ...rest }) {
+export function Button({ children, variantOptions, handleClick, ...rest }) {
   const variantClasses = {
     type: {
       filledPrimary: s.filledPrimary,
@@ -19,9 +19,18 @@ export function Button({ children, variantOptions, ...rest }) {
       M: s.paddingMedium,
       L: s.paddingLarge
     },
+    hover: {
+      withNegative: s.negativeHover
+    }
   };
 
   return (
-    <button className={composeVariant(variantClasses, variantOptions)} {...rest}>{children}</button>
+    <button
+      className={composeVariant(variantClasses, variantOptions)}
+      onClick={handleClick}
+      {...rest}
+    >
+      {children}
+    </button>
   );
 }

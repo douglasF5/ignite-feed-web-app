@@ -35,15 +35,18 @@ export const postsMockContent = [
         id: '1c1',
         authorInfo: authors[0],
         publishedAt: 'CHANGE ME',
-        content: '<p>So good, congrats!! 👏👏</p>'
+        content: '<p>So good, congrats!! 👏👏</p>',
+        clapsCount: 6
       },
       {
         id: '1c2',
         authorInfo: authors[2],
         publishedAt: 'CHANGE ME',
-        content: '<p>Way to go <a href="#">@Jane Cooper!</a> 🚀</p>'
+        content: '<p>Way to go <a href="#">@Jane Cooper!</a> 🚀</p>',
+        clapsCount: 2
       },
     ],
+    clapsCount: 8
   },
   {
     id: '2',
@@ -51,5 +54,6 @@ export const postsMockContent = [
     publishedAt: 'CHANGE ME',
     content: '<p>Finally, the first version of my portfolio is out! 🙌 It was challenging to design and code the whole thing, but it turns out great.</p><br/><p>Check it out here -> <a href="#">bessie.dev</a></p><br/><p><a href="#">#portfolio</a> <a href="#">#frontend</a> <a href="#">#fullStack</a> <a href="#">#design</a></p>',
     comments: null,
+    clapsCount: 11
   },
 ];

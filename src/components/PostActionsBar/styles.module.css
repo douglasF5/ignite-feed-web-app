@@ -4,6 +4,9 @@
   padding: 12px 0;
   margin: 0 32px;
   border-top: 1px solid var(--c-outline);
+}
+
+.actionBar.withCommentsSection {
   border-bottom: 1px solid var(--c-outline);
 }
 

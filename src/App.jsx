@@ -1,4 +1,5 @@
 import { postsMockContent } from './utils/posts-mock-content';
+import { useState } from 'react';
 import './global-styles.css';
 import s from './app.module.css';
 import { Header } from './components/Header';
@@ -8,6 +9,17 @@ import { PostActionsBar } from './components/PostActionsBar';
 import { CommentsSection } from './components/CommentsSection';
 
 function App() {
+  const [hasCommentSectionVisible, setHasCommentSectionVisible] = useState(null);
+
+  function handleCommentSection(postId) {
+    if (postId === hasCommentSectionVisible) {
+      setHasCommentSectionVisible(null);
+      return;
+    }
+
+    setHasCommentSectionVisible(postId);
+  }
+
   return (
     <div>
       <Header />
@@ -26,8 +38,13 @@ function App() {
               {postsMockContent.map(post => (
                 <div key={post.id} className={s.postContainer}>
                   <PostContent data={post} />
-                  <PostActionsBar />
-                  <CommentsSection commentsData={post.comments} />
+                  <PostActionsBar
+                    commentsCount={post.comments ? post.comments.length : null}
+                    clapsCount={post.clapsCount}
+                    toggleCommentsSection={() => handleCommentSection(post.id)}
+                    isCommentsSectionVisible={hasCommentSectionVisible === post.id}
+                  />
+                  {hasCommentSectionVisible === post.id && <CommentsSection commentsData={post.comments} />}
                 </div>
               ))}
             </div>
