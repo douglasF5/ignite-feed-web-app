@@ -4,10 +4,14 @@ import s from './styles.module.css';
 import { Button } from '../Button';
 import { HandsClap, HandsClapFill, TextBubble, TextBubbleFill } from '../Icons';
 
-export function PostActionsBar({ commentsCount, clapsCount, toggleCommentsSection, isCommentsSectionVisible }) {
-  const [isClapped, setIsClapped] = useState(false);
-  const clapsTotalCount = isClapped ? clapsCount + 1 : clapsCount;
-
+export function PostActionsBar({
+  commentsCount,
+  clapsCount,
+  isCommentsSectionVisible,
+  isClapped,
+  updateClapsCount,
+  toggleCommentsSection
+}) {
   return (
     <div className={composeClasses([
       s.actionBar,
@@ -19,13 +23,13 @@ export function PostActionsBar({ commentsCount, clapsCount, toggleCommentsSectio
           label: 'L',
           padding: 'M'
         }}
-        handleClick={() => setIsClapped(!isClapped)}
+        handleClick={updateClapsCount}
       >
         {isClapped
           ? <HandsClapFill size={24} />
           : <HandsClap size={24} />
         }
-        Clap {`· ${clapsTotalCount}`}
+        Clap {`· ${clapsCount}`}
       </Button>
       <Button
         variantOptions={{

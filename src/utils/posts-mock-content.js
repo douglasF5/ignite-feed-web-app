@@ -28,32 +28,36 @@ export const postsMockContent = [
   {
     id: '1',
     authorInfo: authors[1],
-    publishedAt: 'CHANGE ME',
+    publishedAt: new Date('2022-12-16 20:12:00'),
     content: '<p>Hey folks 👋</p><br/><p>Just updated my portfolio. This is a project I worked on during NLW Return, an event by Rocketseat. Check out DoctorCare down below.</p><br/><p>👉&nbsp;&nbsp;<a href="#">jane.design/doctorcare</a></p><br/><p><a href="#">#newProject</a>&nbsp;<a href="#">#nlw</a>&nbsp;<a href="#">#rocketseat</a></p>',
+    isClapped: false,
+    clapsCount: 8,
     comments: [
       {
         id: '1c1',
         authorInfo: authors[0],
-        publishedAt: 'CHANGE ME',
+        publishedAt: new Date('2022-12-16 20:18:00'),
         content: '<p>So good, congrats!! 👏👏</p>',
-        clapsCount: 6
+        clapsCount: 6,
+        isClapped: false
       },
       {
         id: '1c2',
         authorInfo: authors[2],
-        publishedAt: 'CHANGE ME',
+        publishedAt: new Date('2022-12-16 21:03:00'),
         content: '<p>Way to go <a href="#">@Jane Cooper!</a> 🚀</p>',
-        clapsCount: 2
+        clapsCount: 2,
+        isClapped: false
       },
-    ],
-    clapsCount: 8
+    ]
   },
   {
     id: '2',
     authorInfo: authors[2],
-    publishedAt: 'CHANGE ME',
+    publishedAt: new Date('2022-12-17 09:32:00'),
     content: '<p>Finally, the first version of my portfolio is out! 🙌 It was challenging to design and code the whole thing, but it turns out great.</p><br/><p>Check it out here -> <a href="#">bessie.dev</a></p><br/><p><a href="#">#portfolio</a> <a href="#">#frontend</a> <a href="#">#fullStack</a> <a href="#">#design</a></p>',
-    comments: null,
-    clapsCount: 11
+    isClapped: false,
+    clapsCount: 11,
+    comments: null
   },
 ];

@@ -1,4 +1,4 @@
-import { postsMockContent } from './utils/posts-mock-content';
+import { useContent } from './utils/ContentContext';
 import { useState } from 'react';
 import './global-styles.css';
 import s from './app.module.css';
@@ -10,6 +10,7 @@ import { CommentsSection } from './components/CommentsSection';
 
 function App() {
   const [hasCommentSectionVisible, setHasCommentSectionVisible] = useState(null);
+  const { postsContent, updatePostClapsCount } = useContent();
 
   function handleCommentSection(postId) {
     if (postId === hasCommentSectionVisible) {
@@ -35,16 +36,23 @@ function App() {
           </section>
           <section className={s.postsSection}>
             <div className={s.postsList}>
-              {postsMockContent.map(post => (
+              {postsContent.map(post => (
                 <div key={post.id} className={s.postContainer}>
                   <PostContent data={post} />
                   <PostActionsBar
+                    updateClapsCount={() => updatePostClapsCount(post.id)}
                     commentsCount={post.comments ? post.comments.length : null}
                     clapsCount={post.clapsCount}
+                    isClapped={post.isClapped}
                     toggleCommentsSection={() => handleCommentSection(post.id)}
                     isCommentsSectionVisible={hasCommentSectionVisible === post.id}
                   />
-                  {hasCommentSectionVisible === post.id && <CommentsSection commentsData={post.comments} />}
+                  {hasCommentSectionVisible === post.id && (
+                    <CommentsSection
+                      postId={post.id}
+                      commentsData={post.comments}
+                    />
+                  )}
                 </div>
               ))}
             </div>

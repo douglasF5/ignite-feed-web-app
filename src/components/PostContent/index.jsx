@@ -1,3 +1,5 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import enUS from 'date-fns/locale/en-US';
 import s from './styles.module.css';
 import { ProfilePic } from '../ProfilePic';
 
@@ -5,6 +7,15 @@ export function PostContent({ data }) {
   const { authorInfo,
     publishedAt,
     content } = data;
+
+  const publishTime = {
+    raw: publishedAt.toISOString(),
+    longForm: format(publishedAt, "dd LLL 'at' HH:mm"),
+    relativeForm: formatDistanceToNow(publishedAt, {
+      locale: enUS,
+      addSuffix: true
+    })
+  };
 
   return (
     <>
@@ -25,10 +36,10 @@ export function PostContent({ data }) {
         </div>
         <time
           className={s.publishTime}
-          dateTime="2008-02-14 20:00"
-          title="2008-02-14 20:00"
+          dateTime={publishTime.raw}
+          title={publishTime.longForm}
         >
-          {publishedAt}
+          {publishTime.relativeForm}
         </time>
       </div>
       <div className={s.contentWrapper}>

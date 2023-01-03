@@ -1,20 +1,23 @@
-import { useState } from 'react';
-import { currentUser } from '../../utils/posts-mock-content';
+import { useContent } from '../../utils/ContentContext';
+import { format, formatDistanceToNow } from 'date-fns';
+import enUS from 'date-fns/locale/en-US';
 import s from './styles.module.css';
 import { HandsClap, HandsClapFill, Trash } from '../Icons';
 import { ProfilePic } from '../ProfilePic';
 import { Button } from '../Button';
 
-export function Comment({ data }) {
+export function Comment({ data, postId }) {
   const { name, role, picture, id } = data.authorInfo;
+  const { currentUser, updateCommentClapsCount } = useContent();
 
-  const [isClapped, setIsClapped] = useState(false);
-  const [clapsTotalCount, setClapsTotalCount] = useState(data.clapsCount);
-
-  function handleClap() {
-    setIsClapped(!isClapped);
-    setClapsTotalCount(previousValue => !isClapped ? previousValue + 1 : data.clapsCount);
-  }
+  const publishTime = {
+    raw: data.publishedAt.toISOString(),
+    longForm: format(data.publishedAt, "dd LLL 'at' HH:mm"),
+    relativeForm: formatDistanceToNow(data.publishedAt, {
+      locale: enUS,
+      addSuffix: true
+    })
+  };
 
   return (
     <div className={s.container}>
@@ -35,10 +38,10 @@ export function Comment({ data }) {
             </div>
             <time
               className={s.publishTime}
-              dateTime="2008-02-14 20:00"
-              title="2008-02-14 20:00"
+              dateTime={publishTime.raw}
+              title={publishTime.longForm}
             >
-              {data.publishedAt}
+              {publishTime.relativeForm}
             </time>
           </div>
           <div className={s.contentContainer} dangerouslySetInnerHTML={{ __html: data.content }}></div>
@@ -46,18 +49,17 @@ export function Comment({ data }) {
         <div className={s.actionBar}>
           <Button
             variantOptions={{
-              type: isClapped ? 'textPrimary' : 'textNeutralVariant',
+              type: data.isClapped ? 'textPrimary' : 'textNeutralVariant',
               label: 'M',
               padding: 'MN'
             }}
-            handleClick={() => handleClap()}
+            handleClick={() => updateCommentClapsCount(postId, data.id)}
           >
-            {isClapped
+            {data.isClapped
               ? <HandsClapFill size={20} />
               : <HandsClap size={20} />
             }
-            {/* Clap {`· ${clapsTotalCount}`} */}
-            Clap {`· ${clapsTotalCount}`}
+            Clap {`· ${data.clapsCount}`}
           </Button>
           {currentUser.id === id && (
             <Button
