@@ -6,7 +6,7 @@ export function CommentsSection({ commentsData, postId }) {
   return (
     <div className={s.commentsSection}>
       <h2 className={s.commentsSectionTitle}>All comments</h2>
-      <CommentWidget />
+      <CommentWidget postId={postId} />
       {commentsData && commentsData.map(comment => <Comment key={comment.id} data={comment} postId={postId} />)}
     </div>
   );

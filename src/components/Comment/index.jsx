@@ -8,7 +8,7 @@ import { Button } from '../Button';
 
 export function Comment({ data, postId }) {
   const { name, role, picture, id } = data.authorInfo;
-  const { currentUser, updateCommentClapsCount } = useContent();
+  const { currentUser, updateCommentClapsCount, removeComment } = useContent();
 
   const publishTime = {
     raw: data.publishedAt.toISOString(),
@@ -69,6 +69,7 @@ export function Comment({ data, postId }) {
                 padding: 'MN',
                 hover: 'withNegative'
               }}
+              handleClick={() => removeComment(postId, data.id)}
             >
               <Trash size={20} />
               Delete

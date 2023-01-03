@@ -55,13 +55,62 @@ export function ContentContextProvider({ children }) {
     setPostsContent(newPostsContent);
   }
 
+  function removeComment(postId, commentId) {
+    const newPostsContent = postsContent.map(post => {
+      if (postId !== post.id) return post;
+
+      const newCommentsContent = post.comments.filter(comment => {
+        return commentId !== comment.id;
+      });
+
+      const newPost = {
+        ...post,
+        comments: newCommentsContent.length === 0 ? null : newCommentsContent
+      };
+
+      return newPost;
+    });
+
+    setPostsContent(newPostsContent);
+  }
+
+  function addComment(postId, commentRawData) {
+    const newPostsContent = postsContent.map(post => {
+      if (postId !== post.id) return post;
+
+      const postHasNoComments = post.comments === null;
+
+      const newComment = {
+        id: `${postId}c${postHasNoComments ? 1 : post.comments.length + 1}`,
+        authorInfo: currentUser,
+        publishedAt: new Date(),
+        content: commentRawData.content,
+        clapsCount: 0,
+        isClapped: false
+      };
+
+      const newCommentsContent = postHasNoComments ? [newComment] : [newComment, ...post.comments];
+
+      const newPost = {
+        ...post,
+        comments: newCommentsContent
+      };
+
+      return newPost;
+    });
+
+    setPostsContent(newPostsContent);
+  }
+
   return (
     <ContentContext.Provider
       value={{
         currentUser,
         postsContent,
         updatePostClapsCount,
-        updateCommentClapsCount
+        updateCommentClapsCount,
+        removeComment,
+        addComment
       }}
     >
       {children}
