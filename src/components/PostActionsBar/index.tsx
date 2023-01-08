@@ -1,8 +1,16 @@
-import { useState } from 'react';
 import { composeClasses } from '../../utils/utils';
 import s from './styles.module.css';
 import { Button } from '../Button';
 import { HandsClap, HandsClapFill, TextBubble, TextBubbleFill } from '../Icons';
+
+interface PostActionsBarProps {
+  commentsCount: number | null;
+  clapsCount: number;
+  isCommentsSectionVisible: boolean;
+  isClapped: boolean;
+  updateClapsCount: () => void;
+  toggleCommentsSection: () => void;
+}
 
 export function PostActionsBar({
   commentsCount,
@@ -11,7 +19,7 @@ export function PostActionsBar({
   isClapped,
   updateClapsCount,
   toggleCommentsSection
-}) {
+}: PostActionsBarProps) {
   return (
     <div className={composeClasses([
       s.actionBar,

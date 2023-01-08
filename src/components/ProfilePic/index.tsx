@@ -1,7 +1,14 @@
 import { composeVariant } from '../../utils/utils';
+import { VariantOptions } from '../../@types/type-definitions';
 import s from './styles.module.css';
 
-export function ProfilePic({ resourcePath, variantOptions, altText }) {
+interface ProfilePicProps {
+  resourcePath: string;
+  variantOptions: VariantOptions;
+  altText: string;
+}
+
+export function ProfilePic({ resourcePath, variantOptions, altText }: ProfilePicProps) {
   const variantClasses = {
     type: {
       default: s.container,

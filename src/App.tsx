@@ -10,15 +10,13 @@ import { PostActionsBar } from './components/PostActionsBar';
 import { CommentsSection } from './components/CommentsSection';
 
 function App() {
-  const [hasCommentSectionVisible, setHasCommentSectionVisible] = useState(null);
+  const [hasCommentSectionVisible, setHasCommentSectionVisible] = useState<string | null>(null);
   const {
     postsContent,
     updatePostClapsCount,
-    deleteDialogData,
-    setDeleteDialogData
   } = useContent();
 
-  function handleCommentSection(postId) {
+  function handleCommentSection(postId: string) {
     if (postId === hasCommentSectionVisible) {
       setHasCommentSectionVisible(null);
       return;

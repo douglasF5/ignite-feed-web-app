@@ -1,19 +1,19 @@
 import { useContent } from '../../utils/ContentContext';
+import { DeleteDialogDataObject } from '../../@types/type-definitions';
 import s from './styles.module.css';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import { Button } from '../Button';
 
 export const DeleteDialog = () => {
-  const { removeComment, setDeleteDialogData, deleteDialogData } = useContent();
+  const { removeComment, handleToggleDeleteDialog, deleteDialogData } = useContent();
 
   function handleDeleteComment() {
-    removeComment(deleteDialogData?.postId, deleteDialogData?.commentId);
-    setDeleteDialogData(null);
+    removeComment((deleteDialogData as DeleteDialogDataObject).postId, (deleteDialogData as DeleteDialogDataObject).commentId);
+    handleToggleDeleteDialog(null);
   }
 
   function handleCancelDeleteComment() {
-    console.log("I'm about to be canceled!");
-    setDeleteDialogData(null);
+    handleToggleDeleteDialog(null);
   }
 
   return (

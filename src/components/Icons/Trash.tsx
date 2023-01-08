@@ -1,4 +1,6 @@
-const Trash = ({ iconColor, size, ...props }) => {
+import { IconProps } from '../../@types/type-definitions';
+
+const Trash = ({ iconColor, size, ...props }: IconProps) => {
   const iconSize = size || 28;
 
   return (

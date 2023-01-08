@@ -1,4 +1,6 @@
-const TextBubble = ({ iconColor, size, ...props }) => {
+import { IconProps } from '../../@types/type-definitions';
+
+const TextBubble = ({ iconColor, size, ...props }: IconProps) => {
   const iconSize = size || 28;
   return (
     <svg width={iconSize} height={iconSize} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>

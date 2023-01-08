@@ -1,9 +1,14 @@
 import { format, formatDistanceToNow } from 'date-fns';
+import { PostInterface } from '../../@types/type-definitions';
 import enUS from 'date-fns/locale/en-US';
 import s from './styles.module.css';
 import { ProfilePic } from '../ProfilePic';
 
-export function PostContent({ data }) {
+interface PostContentProps {
+  data: PostInterface;
+}
+
+export function PostContent({ data }: PostContentProps) {
   const { authorInfo,
     publishedAt,
     content } = data;

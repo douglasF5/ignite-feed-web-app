@@ -1,8 +1,14 @@
+import { CommentInterface } from '../../@types/type-definitions';
 import s from './styles.module.css';
 import { CommentWidget } from '../CommentWidget';
 import { Comment } from '../Comment';
 
-export function CommentsSection({ commentsData, postId }) {
+interface CommentsSectionProps {
+  commentsData: CommentInterface[] | null;
+  postId: string;
+}
+
+export function CommentsSection({ commentsData, postId }: CommentsSectionProps) {
   return (
     <div className={s.commentsSection}>
       <h2 className={s.commentsSectionTitle}>All comments</h2>

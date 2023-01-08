@@ -1,20 +1,27 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useContent } from '../../utils/ContentContext';
 import s from './styles.module.css';
 import { TextareaAutosize } from '@mui/base';
 import { ProfilePic } from '../ProfilePic';
 import { Button } from '../Button';
 
-export function CommentWidget({ postId }) {
+interface CommentWidgetProps {
+  postId: string;
+}
+
+export function CommentWidget({ postId }: CommentWidgetProps) {
   const [commentContent, setCommentContent] = useState('');
   const isSubmitButtonDisabled = commentContent === '';
-  const { addComment } = useContent();
+  const { addComment, currentUser } = useContent();
 
-  function handleUpdateTextArea(e) {
-    setCommentContent(e.target.value);
+  function handleUpdateTextArea(e: React.FormEvent<EventTarget>) {
+    const target = e.target as HTMLTextAreaElement;
+    setCommentContent(target.value);
   }
 
-  function handleFormSubmit(e) {
+  function handleFormSubmit(e: React.FormEvent<EventTarget>) {
+    const target = e.target as HTMLButtonElement;
+    setCommentContent(target.value);
     e.preventDefault();
     addComment(postId, { content: commentContent });
     setCommentContent('');
@@ -23,7 +30,8 @@ export function CommentWidget({ postId }) {
   return (
     <div className={s.commentWidget}>
       <ProfilePic
-        resourcePath="/leslie-profile-pic.png"
+        resourcePath={currentUser.picture}
+        altText={currentUser.name}
         variantOptions={{
           size: 'S',
           type: 'default'

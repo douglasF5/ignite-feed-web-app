@@ -1,9 +1,17 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
+import { VariantOptions, VariantClassesList } from '../../@types/type-definitions.d';
 import { composeVariant } from '../../utils/utils';
 import s from './styles.module.css';
 
-export const Button = forwardRef(({ children, variantOptions, handleClick, ...props }, forwardedRef) => {
-  const variantClasses = {
+interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+  variantOptions: VariantOptions;
+  children: React.ReactNode;
+  handleClick?: (event: React.PointerEvent<HTMLButtonElement>) => void;
+  ref?: any;
+}
+
+export const Button = forwardRef(({ children, variantOptions, handleClick, type, ...props }: ButtonProps, forwardedRef) => {
+  const variantClasses: VariantClassesList = {
     type: {
       filledPrimary: s.filledPrimary,
       textNeutral: s.textNeutral,

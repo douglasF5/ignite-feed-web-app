@@ -1,5 +1,7 @@
+import { UserData, PostInterface } from '../@types/type-definitions';
+
 // AUTHORS DATA
-const authors = [
+const authors: UserData[] = [
   {
     id: 1,
     name: 'Leslie Alexander',
@@ -21,10 +23,10 @@ const authors = [
 ];
 
 // CURRENT USER DATA
-export const currentUser = authors[0];
+export const currentUser: UserData = authors[0];
 
 // POSTS DATA
-export const postsMockContent = [
+export const postsMockContent: PostInterface[] = [
   {
     id: '1',
     authorInfo: authors[1],

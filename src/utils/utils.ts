@@ -1,5 +1,7 @@
-export function composeVariant(variantClasses, options) {
-  const classList = [];
+import { VariantClassesList, VariantOptions } from '../@types/type-definitions'
+
+export function composeVariant(variantClasses: VariantClassesList, options: VariantOptions) {
+  const classList: string[] = [];
 
   for (let option in options) {
     const variableAxisName = option;
@@ -11,11 +13,11 @@ export function composeVariant(variantClasses, options) {
   return classList.join(" ");
 };
 
-export function composeClasses(classList) {
+export function composeClasses(classList: string[]) {
   return classList.filter(className => className !== null).join(" ");
 };
 
-export function generateQuickId(prefix) {
+export function generateQuickId(prefix: string) {
   const lettersMap = ['q', 'u', 'i', 'c', 'k'];
   const loopRounds = Math.floor(Math.random() * (6 - 3) + 3);
   let idTail = '';

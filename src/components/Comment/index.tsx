@@ -1,4 +1,5 @@
 import { useContent } from '../../utils/ContentContext';
+import { CommentInterface } from '../../@types/type-definitions';
 import { format, formatDistanceToNow } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 import s from './styles.module.css';
@@ -6,9 +7,14 @@ import { HandsClap, HandsClapFill, Trash } from '../Icons';
 import { ProfilePic } from '../ProfilePic';
 import { Button } from '../Button';
 
-export function Comment({ data, postId }) {
+interface CommentProps {
+  data: CommentInterface;
+  postId: string;
+}
+
+export function Comment({ data, postId }: CommentProps) {
   const { name, role, picture, id } = data.authorInfo;
-  const { currentUser, updateCommentClapsCount, setDeleteDialogData } = useContent();
+  const { currentUser, updateCommentClapsCount, handleToggleDeleteDialog } = useContent();
 
   const publishTime = {
     raw: data.publishedAt.toISOString(),
@@ -69,7 +75,7 @@ export function Comment({ data, postId }) {
                 padding: 'MN',
                 hover: 'withNegative'
               }}
-              handleClick={() => setDeleteDialogData({ postId, commentId: data.id })}
+              handleClick={() => handleToggleDeleteDialog({ postId, commentId: data.id })}
             >
               <Trash size={20} />
               Delete
