@@ -20,8 +20,6 @@ export function CommentWidget({ postId }: CommentWidgetProps) {
   }
 
   function handleFormSubmit(e: React.FormEvent<EventTarget>) {
-    const target = e.target as HTMLButtonElement;
-    setCommentContent(target.value);
     e.preventDefault();
     addComment(postId, { content: commentContent });
     setCommentContent('');

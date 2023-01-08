@@ -35,7 +35,7 @@ function App() {
             <div className={s.stickyContainer}>
               <ProfileCard />
               <p className={s.disclosureText}>Ignite Feed © 2022</p>
-              <p className={s.disclosureText}>As this is a basic frontend exercise, not all components are functional.</p>
+              {/* <p className={s.disclosureText}>As this is a basic frontend exercise, not all components are functional.</p> */}
             </div>
           </section>
           <section className={s.postsSection}>
