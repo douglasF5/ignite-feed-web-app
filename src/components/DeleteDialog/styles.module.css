@@ -1,0 +1,45 @@
+.overlay {
+  position: fixed;
+  background-color: var(--c-scrim);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.contentBox {
+  composes: VStack from "../../base-styles.module.css";
+  position: fixed;
+  padding: 24px;
+  gap: 24px;
+  width: 432px;
+  max-width: 432px;
+  max-height: 85vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--c-surface);
+  border-radius: 8px;
+  border: 1px solid var(--c-outline);
+}
+
+.slot1 {
+  composes: VStack from "../../base-styles.module.css";
+  gap: 8px;
+}
+
+.title {
+  composes: headlineM from "../../base-styles.module.css";
+  color: var(--c-on-surface);
+}
+
+.description {
+  composes: bodyM from "../../base-styles.module.css";
+  color: var(--c-on-surface-medium);
+}
+
+.slot2 {
+  composes: HStack from "../../base-styles.module.css";
+  justify-content: flex-end;
+  gap: 24px;
+}

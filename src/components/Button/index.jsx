@@ -1,13 +1,15 @@
+import { forwardRef } from 'react';
 import { composeVariant } from '../../utils/utils';
 import s from './styles.module.css';
 
-export function Button({ children, variantOptions, handleClick, ...rest }) {
+export const Button = forwardRef(({ children, variantOptions, handleClick, ...props }, forwardedRef) => {
   const variantClasses = {
     type: {
       filledPrimary: s.filledPrimary,
       textNeutral: s.textNeutral,
       textNeutralVariant: s.textNeutralVariant,
-      textPrimary: s.textPrimary
+      textPrimary: s.textPrimary,
+      filledTonalNegative: s.filledTonalNegative
     },
     label: {
       M: s.buttonLabelMedium,
@@ -28,9 +30,10 @@ export function Button({ children, variantOptions, handleClick, ...rest }) {
     <button
       className={composeVariant(variantClasses, variantOptions)}
       onClick={handleClick}
-      {...rest}
+      ref={forwardedRef}
+      {...props}
     >
       {children}
     </button>
   );
-}
+});

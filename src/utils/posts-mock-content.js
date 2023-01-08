@@ -34,7 +34,7 @@ export const postsMockContent = [
     clapsCount: 8,
     comments: [
       {
-        id: '1c1',
+        id: '1c0392k',
         authorInfo: authors[0],
         publishedAt: new Date('2022-12-16 20:18:00'),
         content: '<p>So good, congrats!! 👏👏</p>',
@@ -42,7 +42,7 @@ export const postsMockContent = [
         isClapped: false
       },
       {
-        id: '1c2',
+        id: '1cq05c3',
         authorInfo: authors[2],
         publishedAt: new Date('2022-12-16 21:03:00'),
         content: '<p>Way to go <a href="#">@Jane Cooper!</a> 🚀</p>',

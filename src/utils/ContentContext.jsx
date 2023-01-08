@@ -1,4 +1,5 @@
 import { useContext, createContext, useState } from 'react';
+import { generateQuickId } from './utils';
 import { currentUser, postsMockContent } from './posts-mock-content';
 
 // CONTEXT DEFINITION
@@ -7,6 +8,7 @@ export const ContentContext = createContext({});
 //CONTEXT PROVIDER
 export function ContentContextProvider({ children }) {
   const [postsContent, setPostsContent] = useState(postsMockContent);
+  const [deleteDialogData, setDeleteDialogData] = useState(null);
 
   function updatePostClapsCount(postId) {
     const newPostsContent = postsContent.map(post => {
@@ -81,7 +83,7 @@ export function ContentContextProvider({ children }) {
       const postHasNoComments = post.comments === null;
 
       const newComment = {
-        id: `${postId}c${postHasNoComments ? 1 : post.comments.length + 1}`,
+        id: generateQuickId(postId + 'c'),
         authorInfo: currentUser,
         publishedAt: new Date(),
         content: commentRawData.content,
@@ -107,6 +109,8 @@ export function ContentContextProvider({ children }) {
       value={{
         currentUser,
         postsContent,
+        deleteDialogData,
+        setDeleteDialogData,
         updatePostClapsCount,
         updateCommentClapsCount,
         removeComment,

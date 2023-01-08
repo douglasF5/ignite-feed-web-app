@@ -5,7 +5,7 @@
   --c-elevation-2: 0.08;
   /* Color styles */
   --c-outline: rgba(63, 63, 77, 1);
-  --c-scrim: rgba(0, 0, 0, 0.7);
+  --c-scrim: rgba(0, 0, 0, 0.65);
   --c-primary: rgba(11, 208, 150, 1);
   --c-rgb-primary: 11, 208, 150;
   --c-primary-hover: rgba(13, 194, 141, 1);

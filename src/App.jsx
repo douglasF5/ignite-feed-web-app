@@ -2,6 +2,7 @@ import { useContent } from './utils/ContentContext';
 import { useState } from 'react';
 import './global-styles.css';
 import s from './app.module.css';
+import { DeleteDialog } from './components/DeleteDialog';
 import { Header } from './components/Header';
 import { ProfileCard } from './components/ProfileCard';
 import { PostContent } from './components/PostContent';
@@ -10,7 +11,12 @@ import { CommentsSection } from './components/CommentsSection';
 
 function App() {
   const [hasCommentSectionVisible, setHasCommentSectionVisible] = useState(null);
-  const { postsContent, updatePostClapsCount } = useContent();
+  const {
+    postsContent,
+    updatePostClapsCount,
+    deleteDialogData,
+    setDeleteDialogData
+  } = useContent();
 
   function handleCommentSection(postId) {
     if (postId === hasCommentSectionVisible) {
@@ -60,6 +66,7 @@ function App() {
           </section>
         </div>
       </main>
+      <DeleteDialog />
     </div>
   );
 }

@@ -27,9 +27,22 @@ button:active:not([disabled]) {
   color: var(--c-on-primary);
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
   .filledPrimary:hover:not([disabled]) {
     background-color: var(--c-primary-hover);
+  }
+}
+
+.filledTonalNegative {
+  composes: button;
+  background-color: rgba(var(--c-rgb-negative), var(--c-elevation-2));
+  color: var(--c-negative);
+}
+
+@media (hover: hover) {
+  .filledTonalNegative:hover:not([disabled]) {
+    background-color: var(--c-negative);
+    color: var(--c-on-negative);
   }
 }
 
@@ -39,7 +52,7 @@ button:active:not([disabled]) {
   color: var(--c-primary);
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
   .textPrimary:hover {
     background-color: rgba(var(--c-rgb-primary), var(--c-elevation-2));
   }
@@ -51,12 +64,11 @@ button:active:not([disabled]) {
   color: var(--c-on-surface);
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
   .textNeutral:hover {
     background-color: rgba(var(--c-rgb-on-surface), var(--c-elevation-1));
   }
 }
-
 
 .textNeutralVariant {
   composes: button;
@@ -64,7 +76,7 @@ button:active:not([disabled]) {
   color: var(--c-on-surface-medium);
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
   .textNeutral:hover {
     background-color: rgba(var(--c-rgb-on-surface), var(--c-elevation-1));
   }
@@ -75,7 +87,7 @@ button:active:not([disabled]) {
   }
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
   .textNeutralVariant:hover {
     color: var(--c-on-surface);
     background-color: rgba(var(--c-rgb-on-surface), var(--c-elevation-1));

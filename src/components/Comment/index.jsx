@@ -8,7 +8,7 @@ import { Button } from '../Button';
 
 export function Comment({ data, postId }) {
   const { name, role, picture, id } = data.authorInfo;
-  const { currentUser, updateCommentClapsCount, removeComment } = useContent();
+  const { currentUser, updateCommentClapsCount, setDeleteDialogData } = useContent();
 
   const publishTime = {
     raw: data.publishedAt.toISOString(),
@@ -59,7 +59,7 @@ export function Comment({ data, postId }) {
               ? <HandsClapFill size={20} />
               : <HandsClap size={20} />
             }
-            Clap {`· ${data.clapsCount}`}
+            Clap {data.clapsCount !== 0 && `· ${data.clapsCount}`}
           </Button>
           {currentUser.id === id && (
             <Button
@@ -69,7 +69,7 @@ export function Comment({ data, postId }) {
                 padding: 'MN',
                 hover: 'withNegative'
               }}
-              handleClick={() => removeComment(postId, data.id)}
+              handleClick={() => setDeleteDialogData({ postId, commentId: data.id })}
             >
               <Trash size={20} />
               Delete
