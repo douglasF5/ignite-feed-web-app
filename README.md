@@ -15,14 +15,14 @@ Social media feed UI built with ReactJS.
 
 ### Tools used
 
-`Typescript` `ReactJS` `CSS Modules` `Date FNS` `Date FNS`
+`Typescript` `ReactJS` `CSS Modules` `Date FNS`
 
 ### Implemented features
 
 - ✅ List posts and comments
 - ✅ React to posts
 - ✅ Add comments
-- ✅ Remote comments
+- ✅ Delete comments
 
 <br>
 
